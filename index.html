@@ -37,6 +37,11 @@ function addTaskItem(taskText){
 
     document.getElementById('taskList').appendChild(li);
 
+    //Call createDoneButton() function
+    const doneBtn = createDoneButton(li);
+    li.appendChild(doneBtn);
+
+
 }
 
 
@@ -49,6 +54,29 @@ function addTaskItem(taskText){
          return editBtn;
 
     }
+
+    function createDoneButton(li){
+    const doneBtn = document.createElement("button");
+    doneBtn.textContent = "Done"
+    doneBtn.marginLeft;
+
+    doneBtn.onclick = () =>{
+        console.log(li);
+        li.classList.add("done");
+        const button = li.querySelectorAll("button");
+
+        button.forEach(btn =>{
+            btn.disabled=true;
+        });
+
+        console.log("Task Completed", li.textContent, Date());
+    }
+    
+
+    
+        return doneBtn;
+    }
+
 
 </script>
 
